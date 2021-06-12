@@ -1,13 +1,67 @@
+<!DOCTYPE html>
 <html>
+    <head>
+        <title>Soukaina EL KAMOUNI - Blog</title>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="./stylesheets/style.css">
 
-<head>
-  <title>Express</title>
-  <link rel="stylesheet" href="/stylesheets/style.css">
-</head>
+        <!-- bootstrap cdn -->
+        <link rel="stylesheet" 
+        href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" 
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" 
+        crossorigin="anonymous">
 
-<body>
-  <h1>Express</h1>
-  <p>Welcome to Express</p>
-</body>
+        <!-- fontawesome cdn -->
+        <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css"
+        integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous" />
+    
+      </head>
+    <body>
+      
+        <center><h1>EL KAMOUNI Soukaina</h1>
+        <p>
+        <a href="https://github.com/SoukainaElkm/Soukaina-Blog">Mon github</a><br>
+        <a href="https://youtube.com"> Ma chaine youtube </a>
+        </p>
+        <div class="container"><center><h2>Mon Projet - Blog</h2>
+        <div class="child">
+        <p>Les utilisateurs: </p>
+        <button type="button" class="btn btn-primary" onclick="displayUsers()">La liste des utilisateurs</button><br><br>
+        <button type="button" class="btn btn-success" onclick="affiche(1)">Ajouter un utilisateur</button><br><br>
+        <button type="button" class="btn btn-warning" onclick="affiche(2)">Modifier un utilisateur</button><br><br>
+        <button type="button" class="btn btn-danger" onclick="affiche(3)">Supprimer un utilisateur</button><br><br>
+        <button type="button" class="btn btn-info" onclick="displayAdmins()">Afficher les admins</button><br><br>
+        <button type="button" class="btn btn-info" onclick="displayGuests()">Afficher les guests</button><br><br>
+        <button type="button" class="btn btn-info" onclick="displayAuthors()">Afficher les auteurs</button><br><br>
+        <br>
 
+        <div id="1">
+          <input type="text" id="username" maxlength="10" placeholder="USERNAME" class="form-control"><br>
+          <input type="email" id="email" maxlength="30" placeholder="EMAIL" class="form-control"><br>
+          <input type="password" id="password" maxlength="8" placeholder="PASSWORD" class="form-control"><br>
+          <input type="text" id="role" placeholder="ROLE {admin, author, guest}" class="form-control"><br>
+          <button class="btn btn-success" onclick="addUser()">ajouter</button><br><br><br>
+        </div>
+          
+        <div id="2">
+          <input type="number" id="iduser" placeholder="Id de l'Utilisateur" class="form-control"><br>
+          <input type="text" id="newusername" placeholder="Son username" class="form-control"><br>
+          <input type="email" id="newemail" placeholder="Son EMAIL" class="form-control"><br>
+          <input type="password" id="newpassword" placeholder="Son Password" class="form-control"><br>
+          <input type="text" id="newrole" placeholder="Son Role {admin, author, guest}" class="form-control"><br>
+          <button class="btn btn-success" onclick="updateUser()">modifier</button><br><br><br>
+        </div>
+    
+        <div id="3">
+          <input type="number" id="idUserDelete" placeholder="Id de l'Utilisateu" class="form-control"><br>
+          <button class="btn btn-success" onclick="deleteUser()">supprimer</button><br><br><br>
+        </div>
+        <div id="listUsers" class="table">
+        </div>
+    </div>
+  </center>
+      </div><br>
+      <script src="./javascripts/index.js"></script>
+      </body>
 </html>
