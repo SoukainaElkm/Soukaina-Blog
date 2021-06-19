@@ -17,8 +17,8 @@ function affiche(a) {
 }
 
 
-/* partie users */
-function displayUsers() {
+
+function AfficherUsers() {
     let list = document.getElementById('listUsers')
     list.innerHTML = ""
 
@@ -27,7 +27,7 @@ function displayUsers() {
     else
         list.style.display = "none"
 
-    fetch('/user')
+    fetch('/users')
         .then(res => res.json())
         .then(function (data) {
             let tb = Object.keys(data)
@@ -89,8 +89,7 @@ function deleteUser() {
     fetch('/users/:id', options)
 }
 
-/* partie articles */
-function displayArticles() {
+function AfficherArticles() {
     let list = document.getElementById('listArticles')
     list.innerHTML = ""
 
@@ -161,8 +160,8 @@ function deleteArticle() {
     fetch('/articles/:id', options)
 }
 
-/* partie tags */
-function displayTags() {
+
+function AfficherTags() {
     let list = document.getElementById('listTags')
 
     if (list.style.display == "none")
@@ -227,8 +226,8 @@ function deleteTag() {
     fetch('/tags/:id', options)
 }
 
-/* partie comments */
-function displayComments() {
+
+function AfficherComments() {
     let list = document.getElementById('listComments')
 
     if (list.style.display == "none")
@@ -293,8 +292,8 @@ function deleteComment() {
     fetch('/comments/:id', options)
 }
 
-// getUserArticles
-function getUserArticles() {
+
+function getArticles() {
     let list = document.getElementById('listUsers')
     list.innerHTML = ""
 
@@ -320,7 +319,7 @@ function getUserArticles() {
         })
 }
 
-function getArticleComments() {
+function getCommentsByArticle() {
     let list = document.getElementById('listArticles')
     list.innerHTML = ""
 
@@ -345,8 +344,8 @@ function getArticleComments() {
         })
 }
 
-// get user by role 
-function displayAdmins() {
+
+function AfficherAdmins() {
     let list = document.getElementById('listUsers')
     list.innerHTML = ""
 
@@ -370,7 +369,7 @@ function displayAdmins() {
         })
 }
 
-function displayAuthors() {
+function AfficherAuthors() {
     let list = document.getElementById('listUsers')
     list.innerHTML = ""
 
@@ -394,7 +393,7 @@ function displayAuthors() {
         })
 }
 
-function displayGuests() {
+function AfficherGuests() {
     let list = document.getElementById('listUsers')
     list.innerHTML = ""
 
@@ -417,3 +416,15 @@ function displayGuests() {
             list.innerHTML = usersList
         })
 }
+
+/* For our Header */
+
+$(function () {
+    $(window).on('scroll', function () {
+        if ($(window).scrollTop() > 10) {
+            $('.navbar').addClass('active');
+        } else {
+            $('.navbar').removeClass('active');
+        }
+    });
+});

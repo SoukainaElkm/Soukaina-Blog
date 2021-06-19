@@ -3,7 +3,7 @@
     "username": "root",
     "password": null,
     "database": "elkamouni_development",
-    "host": "127.0.0.1",
+    "host": "127.0.0.7",
     "dialect": "mysql",
     "logging": false
   },
@@ -11,14 +11,14 @@
     "username": "root",
     "password": null,
     "database": "elkamouni_test",
-    "host": "127.0.0.1",
+    "host": "127.0.0.7",
     "dialect": "mysql"
   },
   "production": {
     "username": "root",
     "password": null,
     "database": "elkamouni_production",
-    "host": "127.0.0.1",
+    "host": "127.0.0.7",
     "dialect": "mysql"
   }
 }

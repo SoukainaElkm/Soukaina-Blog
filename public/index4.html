@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>EL KAMOUNI Soukaina's Blog</title>
+    <link rel="stylesheet" href="./stylesheets/style.css">
+
+      <!-- bootstrap cdn -->
+      <link rel="stylesheet" 
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" 
+      integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" 
+      crossorigin="anonymous">
+      <link rel="stylesheet" 
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.bundle.min.js" 
+      integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" 
+      crossorigin="anonymous">
+
+      <!-- fontawesome cdn -->
+      <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css"
+      integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous" />
+
+
+
+  </head>
+
+  <body>
+
+    <!-- Navbar-->
+<header class="header">
+  <nav class="navbar navbar-expand-lg fixed-top py-3">
+      <div class="container"><a href="#" class="navbar-brand text-uppercase font-weight-bold">EL KAMOUNI Soukaina</a>
+          <button type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation" class="navbar-toggler navbar-toggler-right"><i class="fa fa-bars"></i></button>
+          
+          <div id="navbarSupportedContent" class="collapse navbar-collapse">
+              <ul class="navbar-nav ml-auto">
+                  <li class="nav-item active"><a href="index.html" class="nav-link text-uppercase font-weight-bold">Home Page <span class="sr-only">(current)</span></a></li>
+                  <li class="nav-item"><a href="index2.html" class="nav-link text-uppercase font-weight-bold">Users</a></li>
+                  <li class="nav-item"><a href="index3.html" class="nav-link text-uppercase font-weight-bold">Articles</a></li>
+                  <li class="nav-item"><a href="index4.html" class="nav-link text-uppercase font-weight-bold">Tags</a></li>
+                  <li class="nav-item"><a href="index5.html" class="nav-link text-uppercase font-weight-bold">Comments</a></li>
+                </ul>
+          </div>
+      </div>
+  </nav>
+</header>
+
+
+<!-- For demo purpose -->
+<div class="container">
+    <div class="pt-5 text-white">
+        <header class="py-5 mt-5">
+            <h1 class="display-4">EL KAMOUNI Soukaina's Blog</h1><br><br>
+
+                <button type="button" class="btn btn-primary btn-lg btn-block" onclick="AfficherTags()">afficher liste des Tags</button><br>
+                <a><button type="button" class="btn btn-secondary btn-lg btn-block" onclick="affiche('7')">ajouter un Tag</button></a><br>
+                <a><button type="button" class="btn btn-secondary btn-lg btn-block" onclick="affiche('8')">modifier un Tag</button></a><br>
+                <a><button type="button" class="btn btn-secondary btn-lg btn-block" onclick="affiche('9')">supprimer un Tag</button></a><br><br>
+
+                <div id="7">
+                <input type="text" id="name" placeholder="NAME" class="form-control"><br>
+                <button class="btn btn-info" onclick="addTag()">ajouter</button><br><br>
+                </div>
+                
+                <div id="8">
+                <input type="number" id="idtag" placeholder="ID DU TAG A MODIFIER" class="form-control"><br>
+                <input type="text" id="newname" placeholder="NAME" class="form-control"><br>
+                
+                <button class="btn btn-info" onclick="updateTag()">modifier</button><br><br>
+                </div>
+
+                <div id="9">
+                <input type="number" id="idTagDelete" placeholder="ID DU TAG A SUPPRIMER" class="form-control"><br>
+                <button class="btn btn-info" onclick="deleteTag()">supprimer</button><br><br><br>
+                </div>
+
+                <div id="listTags" class="table">
+
+    </div>
+  </div><br>
+
+
+
+    <script src="./javascripts/index.js">
+
+    </script>
+  
+  </body>
+</html>

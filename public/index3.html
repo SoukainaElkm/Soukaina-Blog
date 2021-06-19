@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>EL KAMOUNI Soukaina's Blog</title>
+    <link rel="stylesheet" href="./stylesheets/style.css">
+
+      <!-- bootstrap cdn -->
+      <link rel="stylesheet" 
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" 
+      integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" 
+      crossorigin="anonymous">
+      <link rel="stylesheet" 
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.bundle.min.js" 
+      integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" 
+      crossorigin="anonymous">
+
+      <!-- fontawesome cdn -->
+      <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css"
+      integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous" />
+
+
+
+  </head>
+
+  <body>
+
+    <!-- Navbar-->
+<header class="header">
+  <nav class="navbar navbar-expand-lg fixed-top py-3">
+      <div class="container"><a href="#" class="navbar-brand text-uppercase font-weight-bold">EL KAMOUNI Soukaina</a>
+          <button type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation" class="navbar-toggler navbar-toggler-right"><i class="fa fa-bars"></i></button>
+          
+          <div id="navbarSupportedContent" class="collapse navbar-collapse">
+              <ul class="navbar-nav ml-auto">
+                  <li class="nav-item active"><a href="index.html" class="nav-link text-uppercase font-weight-bold">Home Page <span class="sr-only">(current)</span></a></li>
+                  <li class="nav-item"><a href="index2.html" class="nav-link text-uppercase font-weight-bold">Users</a></li>
+                  <li class="nav-item"><a href="index3.html" class="nav-link text-uppercase font-weight-bold">Articles</a></li>
+                  <li class="nav-item"><a href="index4.html" class="nav-link text-uppercase font-weight-bold">Tags</a></li>
+                  <li class="nav-item"><a href="index5.html" class="nav-link text-uppercase font-weight-bold">Comments</a></li>
+
+                </ul>
+          </div>
+      </div>
+  </nav>
+</header>
+
+
+<!-- For demo purpose -->
+<div class="container">
+    <div class="pt-5 text-white">
+        <header class="py-5 mt-5">
+            <h1 class="display-4">EL KAMOUNI Soukaina's Blog</h1><br><br>
+
+                <button type="button" class="btn btn-primary btn-lg btn-block" onclick="AfficherArticles()">afficher liste des Articles</button>
+                <button type="button" class="btn btn-info btn-lg btn-block" onclick="affiche('14')">comments d'un articles</button>
+                <button type="button" class="btn btn-secondary btn-lg btn-block" onclick="affiche('4')">ajouter un Article</button>
+                <button type="button" class="btn btn-secondary btn-lg btn-block" onclick="affiche('5')">modifier un Article</button>
+                <button type="button" class="btn btn-secondary btn-lg btn-block" onclick="affiche('6')">supprimer un Article</button><br><br>
+
+                <div id="4">
+                <input type="text" id="title" placeholder="TITLE" class="form-control"><br>
+                <input type="text" id="content" placeholder="CONTENT" class="form-control"><br>
+                <input type="number" id="published" placeholder="PUBLISHED (0 or 1)" class="form-control"><br>
+                <input type="number" id="UserId" placeholder="USERID" class="form-control"><br>
+                <button class="btn btn-info" onclick="addArticle()">ajouter</button><br><br>
+                </div>
+                
+                <div id="5">
+                <input type="number" id="idarticle" placeholder="ID D'ARTICLE A MODIFIER" class="form-control"><br>
+                <input type="text" id="newtitle" placeholder="TITLE" class="form-control"><br>
+                <input type="text" id="newcontent" placeholder="CONTENT" class="form-control"><br>
+                <input type="number" id="newpublished" placeholder="PUBLISHED (0 or 1)" class="form-control"><br>
+                <input type="number" id="newUserId" placeholder="USERID" class="form-control"><br>
+                <button class="btn btn-info" onclick="updateArticle()">modifier</button><br><br>
+                </div>
+
+                <div id="6">
+                <input type="number" id="idArticleDelete" placeholder="ID D'ARTICLE A SUPPRIMER" class="form-control"><br>
+                <button class="btn btn-info" onclick="deleteArticle()">supprimer</button><br><br>
+                </div>
+
+                <div id="14">
+                <input type="number" id="idArticleComments" placeholder="ID D'ARTICLE" class="form-control"><br>
+                <button class="btn btn-info" onclick="getCommentsByArticle()">afficher</button><br><br><br>
+                </div>
+
+                <div id="listArticles" class="table">
+
+    </div>
+  </div><br>
+
+
+
+    <script src="./javascripts/index.js">
+
+    </script>
+  
+  </body>
+</html>

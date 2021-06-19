@@ -7,16 +7,16 @@ const roles = ['admin', 'author', 'guest']
 module.exports = {
   up: async (queryInterface, Sequelize) => {
 
-    /*for(var i=0;i<20;i++) {
+    for (var i = 0; i < 20; i++) {
       await queryInterface.bulkInsert('users', [{
-        username:faker.name.firstName(),
+        username: faker.name.firstName(),
         email: faker.internet.email(),
         password: faker.internet.password(),
         role: roles[Math.floor(Math.random() * roles.length)],
-        CreatedAt : new Date(),
-        updatedAt : new Date()
+        CreatedAt: new Date(),
+        updatedAt: new Date()
       }]);
-    }*/
+    }
 
   },
 
