@@ -1,67 +1,177 @@
 <!DOCTYPE html>
 <html>
-    <head>
-        <title>Soukaina EL KAMOUNI - Blog</title>
-        <meta charset="utf-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-        <link rel="stylesheet" href="./stylesheets/style.css">
 
-        <!-- bootstrap cdn -->
-        <link rel="stylesheet" 
-        href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" 
-        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" 
-        crossorigin="anonymous">
+<head>
+  <title>ELYOUSFI Mohamed - blog</title>
+  <link rel="stylesheet" href="./stylesheets/style.css">
 
-        <!-- fontawesome cdn -->
-        <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css"
-        integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous" />
-    
-      </head>
-    <body>
-      
-        <center><h1>EL KAMOUNI Soukaina</h1>
-        <p>
-        <a href="https://github.com/SoukainaElkm/Soukaina-Blog">Mon github</a><br>
-        <a href="https://youtube.com"> Ma chaine youtube </a>
-        </p>
-        <div class="container"><center><h2>Mon Projet - Blog</h2>
-        <div class="child">
-        <p>Les utilisateurs: </p>
-        <button type="button" class="btn btn-primary" onclick="displayUsers()">La liste des utilisateurs</button><br><br>
-        <button type="button" class="btn btn-success" onclick="affiche(1)">Ajouter un utilisateur</button><br><br>
-        <button type="button" class="btn btn-warning" onclick="affiche(2)">Modifier un utilisateur</button><br><br>
-        <button type="button" class="btn btn-danger" onclick="affiche(3)">Supprimer un utilisateur</button><br><br>
-        <button type="button" class="btn btn-info" onclick="displayAdmins()">Afficher les admins</button><br><br>
-        <button type="button" class="btn btn-info" onclick="displayGuests()">Afficher les guests</button><br><br>
-        <button type="button" class="btn btn-info" onclick="displayAuthors()">Afficher les auteurs</button><br><br>
-        <br>
+  <!-- bootstrap cdn -->
+  <link rel="stylesheet" 
+  href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" 
+  integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" 
+  crossorigin="anonymous">
 
-        <div id="1">
-          <input type="text" id="username" maxlength="10" placeholder="USERNAME" class="form-control"><br>
-          <input type="email" id="email" maxlength="30" placeholder="EMAIL" class="form-control"><br>
-          <input type="password" id="password" maxlength="8" placeholder="PASSWORD" class="form-control"><br>
-          <input type="text" id="role" placeholder="ROLE {admin, author, guest}" class="form-control"><br>
-          <button class="btn btn-success" onclick="addUser()">ajouter</button><br><br><br>
-        </div>
-          
-        <div id="2">
-          <input type="number" id="iduser" placeholder="Id de l'Utilisateur" class="form-control"><br>
-          <input type="text" id="newusername" placeholder="Son username" class="form-control"><br>
-          <input type="email" id="newemail" placeholder="Son EMAIL" class="form-control"><br>
-          <input type="password" id="newpassword" placeholder="Son Password" class="form-control"><br>
-          <input type="text" id="newrole" placeholder="Son Role {admin, author, guest}" class="form-control"><br>
-          <button class="btn btn-success" onclick="updateUser()">modifier</button><br><br><br>
-        </div>
-    
-        <div id="3">
-          <input type="number" id="idUserDelete" placeholder="Id de l'Utilisateu" class="form-control"><br>
-          <button class="btn btn-success" onclick="deleteUser()">supprimer</button><br><br><br>
-        </div>
-        <div id="listUsers" class="table">
-        </div>
+  <!-- fontawesome cdn -->
+  <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css"
+  integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous" />
+
+</head>
+
+<body>
+  <nav>
+    <ul>
+        <li> ELYOUSFI Mohamed  </li>
+        <li> <a href="https://github.com/ElyousfiMohamed/Blog-Express/tree/master" target="_blank"><i class="fab fa-github fa-lg"></i></a> </li>
+        <li> <a href="https://youtube.com/myvideohere" target="_blank"><i class="fab fa-youtube fa-lg"></i></i></a> </li>
+    </ul>
+  </nav>
+  <div class="container"><center><h1>MY SEQUELIZE PROJECT</h1>
+  <div class="child">
+    <h2>Menu pour les Utilisateurs</h2>
+    <button class="btn btn-primary" onclick="displayUsers()">afficher liste des utilisateurs</button>
+    <button class="btn btn-secondary" onclick="affiche('13')">articles d'un utilisateur</button>
+    <button class="btn btn-success" onclick="affiche('1')">ajouter un utilisateurs</button>
+    <button class="btn btn-warning" onclick="affiche('2')">modifier un utilisateur</button>
+    <button class="btn btn-danger" onclick="affiche('3')">supprimer un utilisateur</button><br><br>
+    <button class="btn btn-info" onclick="displayAdmins()">afficher liste des admins</button>
+    <button class="btn btn-info" onclick="displayAuthors()">afficher liste des auteurs</button>
+    <button class="btn btn-info" onclick="displayGuests()">afficher liste des guests</button><br><br>
+  
+    <div id="1">
+      <input type="text" id="username" placeholder="USERNAME" class="form-control"><br>
+      <input type="email" id="email" placeholder="EMAIL" class="form-control"><br>
+      <input type="password" id="password" placeholder="PASSWORD" class="form-control"><br>
+      <input type="text" id="role" placeholder="ROLE {admin, author, guest}" class="form-control"><br><br>
+      <button class="btn btn-success" onclick="addUser()">ajouter</button>
     </div>
-  </center>
-      </div><br>
-      <script src="./javascripts/index.js"></script>
-      </body>
+      
+    <div id="2">
+      <input type="number" id="iduser" placeholder="ID D'UTILISATEUR A MODIFIER" class="form-control"><br>
+      <input type="text" id="newusername" placeholder="USERNAME" class="form-control"><br>
+      <input type="email" id="newemail" placeholder="EMAIL" class="form-control"><br>
+      <input type="password" id="newpassword" placeholder="PASSWORD" class="form-control"><br>
+      <input type="text" id="newrole" placeholder="ROLE {admin, author, guest}" class="form-control"><br><br>
+      <button class="btn btn-success" onclick="updateUser()">modifier</button>
+    </div>
+
+    <div id="3">
+      <input type="number" id="idUserDelete" placeholder="ID D'UTILISATEUR A SUPPRIMER" class="form-control"><br><br>
+      <button class="btn btn-success" onclick="deleteUser()">supprimer</button>
+    </div>
+
+    <div id="13">
+      <input type="number" id="idUserArticles" placeholder="ID D'UTILISATEUR" class="form-control"><br><br>
+      <button class="btn btn-success" onclick="getUserArticles()">afficher</button><br><br><br>
+    </div>
+    <div id="listUsers" class="table">
+
+    </div>
+  </div><br>
+
+  <div class="child">
+    <h2>Menu pour les Articles</h2>
+    <button class="btn btn-primary" onclick="displayArticles()">afficher liste des Articles</button>
+    <button class="btn btn-secondary" onclick="affiche('14')">comments d'un articles</button>
+    <button class="btn btn-success" onclick="affiche('4')">ajouter un Article</button>
+    <button class="btn btn-warning" onclick="affiche('5')">modifier un Article</button>
+    <button class="btn btn-danger" onclick="affiche('6')">supprimer un Article</button><br><br>
+
+    <div id="4">
+      <input type="text" id="title" placeholder="TITLE" class="form-control"><br>
+      <input type="text" id="content" placeholder="CONTENT" class="form-control"><br>
+      <input type="number" id="published" placeholder="PUBLISHED (0 or 1)" class="form-control"><br>
+      <input type="number" id="UserId" placeholder="USERID" class="form-control"><br><br>
+      <button class="btn btn-success" onclick="addArticle()">ajouter</button>
+    </div>
+      
+    <div id="5">
+      <input type="number" id="idarticle" placeholder="ID D'ARTICLE A MODIFIER" class="form-control"><br>
+      <input type="text" id="newtitle" placeholder="TITLE" class="form-control"><br>
+      <input type="text" id="newcontent" placeholder="CONTENT" class="form-control"><br>
+      <input type="number" id="newpublished" placeholder="PUBLISHED (0 or 1)" class="form-control"><br>
+      <input type="number" id="newUserId" placeholder="USERID" class="form-control"><br><br>
+      <button class="btn btn-success" onclick="updateArticle()">modifier</button>
+    </div>
+
+    <div id="6">
+      <input type="number" id="idArticleDelete" placeholder="ID D'ARTICLE A SUPPRIMER" class="form-control"><br><br>
+      <button class="btn btn-success" onclick="deleteArticle()">supprimer</button>
+    </div>
+
+    <div id="14">
+      <input type="number" id="idArticleComments" placeholder="ID D'ARTICLE" class="form-control"><br><br>
+      <button class="btn btn-success" onclick="getArticleComments()">afficher</button><br><br><br>
+    </div>
+
+    <div id="listArticles" class="table">
+
+    </div>
+  </div><br>
+
+  <div class="child">
+    <h2>Menu pour les Tags</h2>
+    <button class="btn btn-primary" onclick="displayTags()">afficher liste des Tags</button>
+    <a><button class="btn btn-success" onclick="affiche('7')">ajouter un Tag</button></a>
+    <a><button class="btn btn-warning" onclick="affiche('8')">modifier un Tag</button></a>
+    <a><button class="btn btn-danger" onclick="affiche('9')">supprimer un Tag</button></a><br><br>
+
+    <div id="7">
+      <input type="text" id="name" placeholder="NAME" class="form-control"><br>
+      <button class="btn btn-success" onclick="addTag()">ajouter</button>
+    </div>
+      
+    <div id="8">
+      <input type="number" id="idtag" placeholder="ID DU TAG A MODIFIER" class="form-control"><br>
+      <input type="text" id="newname" placeholder="NAME" class="form-control"><br>
+      
+      <button class="btn btn-success" onclick="updateTag()">modifier</button>
+    </div>
+
+    <div id="9">
+      <input type="number" id="idTagDelete" placeholder="ID DU TAG A SUPPRIMER" class="form-control"><br><br>
+      <button class="btn btn-success" onclick="deleteTag()">supprimer</button>
+    </div>
+
+    <div id="listTags" class="table">
+
+    </div>
+  </div><br>
+
+  <div class="child">
+    <h2>Menu pour les Comments</h2>
+    <button class="btn btn-primary" onclick="displayComments()">afficher liste des Comments</button>
+    <a><button class="btn btn-success" onclick="affiche('10')">ajouter un Comment</button></a>
+    <a><button class="btn btn-warning" onclick="affiche('11')">modifier un Comment</button></a>
+    <a><button class="btn btn-danger" onclick="affiche('12')">supprimer un Comment</button></a><br><br>
+
+    <div id="10">
+      <input type="text" id="contentt" placeholder="CONTENT" class="form-control"><br>
+      <input type="text" id="ArticleId" placeholder="ARTICLEID " class="form-control"><br>
+      <button class="btn btn-success" onclick="addComment()">ajouter</button>
+    </div>
+      
+    <div id="11">
+      <input type="number" id="idcomment" placeholder="ID DU COMMENT A MODIFIER" class="form-control"><br>
+      <input type="text" id="newcontentt" placeholder="CONTENT" class="form-control"><br>
+      <input type="text" id="newArticleId" placeholder="ARTICLEID " class="form-control"><br>
+      
+      <button class="btn btn-success" onclick="updateComment()">modifier</button>
+    </div>
+
+    <div id="12">
+      <input type="number" id="idCommentDelete" placeholder="ID DU COMMENT A SUPPRIMER" class="form-control"><br><br>
+      <button class="btn btn-success" onclick="deleteComment()">supprimer</button>
+    </div>
+
+    <div id="listComments" class="table">
+
+    </div>
+  </div>
+</center></div>
+
+  <script src="./javascripts/index.js">
+
+  </script>
+</body>
+    
 </html>

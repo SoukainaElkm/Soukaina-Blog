@@ -1,8 +1,72 @@
 body {
-  padding: 50px;
+  padding: 100px 0;
   font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+}
+
+.child {
+  padding: 40px;
+  border-radius: 10px;
+  background-color: black;
+}
+
+nav {
+  background: black;
+  position: absolute;
+  top: 0;
+  width: 100%;
+  height: auto;
+}
+
+h2 {
+  color: white;
+}
+
+h5 {
+  color: white;
+  display: inline;
+}
+
+input {
+  width: 400px;
+}
+
+nav ul {
+  list-style: none;
+  display: flex;
+  padding-top: 10px;
+  justify-content: center;
+}
+
+li {
+  color: white;
+  font-size: 30px;
+  font-weight: bold;
+  margin: 0 40px;
 }
 
 a {
   color: #00B7FF;
+}
+
+a i {
+  padding-top: 10px;
+  color: white;
+}
+
+a i.fa-github:hover {
+  color: rgba(255, 255, 255, 0.705);
+}
+
+a i.fa-youtube:hover {
+  color: rgba(255, 2, 2, 0.705);
+}
+
+.usrrr input{
+  width: 500px;
+}
+
+.table {
+  background-color: white;
+  border-radius: 10px;
+  padding: 30px;
 }

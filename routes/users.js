@@ -1,13 +1,12 @@
 var express = require('express');
 const user = require('../models/user');
 var router = express.Router();
-var db = require('../migrations/20210610222458-create-user');
 const usersRepo = require('../repositories/users')
 const articlesRepo = require('../repositories/articles')
 
 
 /* GET users listing. */
-router.get('/', async function (req, res, next) {
+router.get('/', function (req, res, next) {
   usersRepo.getAllUsers().then(function (result) {
     res.send(result)
   }).catch(err => console.log(err))
@@ -17,7 +16,7 @@ router.get('/', async function (req, res, next) {
     username: datareq.username,
     email: datareq.email,
     password: datareq.password,
-    role: datareq.jobTitle,
+    role: datareq.role,
     createdAt: new Date(),
     updatedAt: new Date()
   }
@@ -32,7 +31,7 @@ router.get('/', async function (req, res, next) {
     username: datareq.username,
     email: datareq.email,
     password: datareq.password,
-    role: datareq.jobTitle,
+    role: datareq.role,
     updatedAt: new Date()
   }
 
@@ -52,7 +51,6 @@ router.route('/:id').delete((req, res) => {
   usersRepo.deleteUser(req.body.id)
   res.send('Utilisateur supprimé')
 })
-
 
 router.get('/:id/admins', function (req, res, next) {
   usersRepo.getAdmins().then(function (result) {
@@ -77,13 +75,5 @@ router.route('/:id/articles').get((req, res) => {
     res.send(result)
   }).catch(err => console.log(err))
 })
-
-router.get('/user-list', function (req, res, next) {
-  var sql = 'SELECT * FROM users';
-  db.query(sql, function (err, data, fields) {
-    if (err) throw err;
-    res.render('user-list', { title: 'User List', userData: data });
-  });
-});
 
 module.exports = router;
